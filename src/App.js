@@ -1,10 +1,16 @@
+import 'normalize.css';
+
 import React, { Component } from 'react';
-import './main.styl';
+import Header from './components/Header/Header';
+import Wrapper from './components/Wrapper/Wrapper';
 
 export default class App extends Component {
   render() {
     return (
-      <h1>Hello, bitch.</h1>
+      <div>
+        <Header />
+        <Wrapper />
+      </div>
     );
   }
 }
