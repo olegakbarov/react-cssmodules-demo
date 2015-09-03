@@ -1,5 +1,5 @@
 {
-  "name": "my-webpack-css-modules-boilerplate",
+  "name": "react-cssmodules-demo",
   "version": "1.0.1",
   "description": "Make your CSS namespaced and build *real* components.",
   "main": "server.js",
@@ -41,6 +41,7 @@
     "postcss-loader": "^0.6.0",
     "react-css-modules": "^3.0.2",
     "react-hot-loader": "^1.3.0",
+    "react-sticky": "^2.5.2",
     "style-loader": "^0.12.3",
     "stylus-loader": "^1.2.1",
     "url-loader": "^0.5.6",
