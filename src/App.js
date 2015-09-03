@@ -1,4 +1,4 @@
-import 'normalize.css';
+import './global.styl';
 
 import React, { Component } from 'react';
 import Header from './components/Header/Header';

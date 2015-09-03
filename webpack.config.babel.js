@@ -1,8 +1,10 @@
-
-var path = require('path');
-var webpack = require('webpack');
-var NyanProgressPlugin = require('nyan-progress-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+/* eslint-env node */
+import path from 'path';
+import webpack from 'webpack';
+import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import autoprefixer from 'autoprefixer';
+import csswring from 'csswring';
 
 module.exports = {
   devtool: 'eval',
@@ -37,8 +39,18 @@ module.exports = {
     {
       test: /\.styl$/,
       loader: ExtractTextPlugin.extract('style-loader',
-      'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader!stylus-loader')
-    }
-  ]
+      'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader!stylus-loader') //eslint-disable-line
+    },
+    {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      loaders: [
+        'file?hash=sha512&digest=hex&name=[hash].[ext]',
+        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+      ]
+    }]
+  },
+
+  postcss: () => {
+    return [autoprefixer, csswring];
   }
 };
