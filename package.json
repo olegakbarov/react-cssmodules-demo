@@ -4,7 +4,7 @@
   "description": "Make your CSS namespaced and build *real* components.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p && cp index.html react-cssmodules-demo",
     "start": "babel-node ./server.js"
   },
   "keywords": [

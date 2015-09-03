@@ -15,9 +15,9 @@ module.exports = {
   ],
 
   output: {
-    path: path.join(__dirname, './build'),
+    path: path.join(__dirname, './react-cssmodules-demo'),
     filename: 'bundle.js',
-    publicPath: '/build'
+    publicPath: '/'
   },
 
   plugins: [
