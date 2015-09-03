@@ -19,7 +19,6 @@ export default class Card extends Component {
     userpick: {}
   }
   handleScroll = () => {
-    console.log(window.document.body.scrollTop);
     if (window.document.body.scrollTop > 500) {
       this.setState({
         card: {
