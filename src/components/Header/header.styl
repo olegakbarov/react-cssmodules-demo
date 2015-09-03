@@ -20,10 +20,9 @@
 .container
   position relative
   margin 80px auto
-  display flex
-  flex-wrap wrap
   width 200px
   height 200px
+  transition all cubic-bezier(0.895, 0.03, 0.685, 0.22) 200ms
 
 block()
   background-color rgba(255, 255, 255, 0.97)
@@ -34,26 +33,6 @@ block()
   transition all cubic-bezier(0.895, 0.03, 0.685, 0.22) 400ms
 
 .block
-  &-top-left
-    block()
-    top -50px
-    left -40px
-    transform rotate(-30deg)
-  &-top-right
-    block()
-    top -40px
-    right -60px
-    transform rotate(20deg)
-  &-bottom-left
-    block()
-    bottom -45px
-    left -50px
-    transform rotate(-60deg)
-  &-bottom-right
-    block()
-    bottom -70px
-    right -60px
-    transform rotate(40deg)
   &-text
     opacity: 0
     position absolute
