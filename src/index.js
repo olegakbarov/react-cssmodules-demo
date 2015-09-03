@@ -1,3 +1,4 @@
+/* global document */
 import React from 'react';
 import App from './App';
 
