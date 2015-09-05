@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack -p",
-    "start": "babel-node ./server.js"
+    "start": "babel-node ./server.js",
+    "clean": "rm .babelrc server.js webpack.config.babel.js .gitignore .eslintrc && rm -rf ./src && rm -rf node_modules"
   },
   "keywords": [
     "react",
