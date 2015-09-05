@@ -22,35 +22,40 @@ export default class Card extends Component {
     if (window.document.body.scrollTop > 500) {
       this.setState({
         card: {
-          opacity: 1
+          opacity: 1,
+          transition: 'all ease 1.3s'
         }
       });
     }
     if (window.document.body.scrollTop > 800) {
       this.setState({
         userpick: {
-          opacity: 1
+          opacity: 1,
+          transition: 'all ease 1.3s'
         }
       });
     }
     if (window.document.body.scrollTop > 1100) {
       this.setState({
         username: {
-          opacity: 1
+          opacity: 1,
+          transition: 'all ease 1.3s'
         }
       });
     }
     if (window.document.body.scrollTop > 1400) {
       this.setState({
         about: {
-          opacity: 1
+          opacity: 1,
+          transition: 'all ease 1.3s'
         }
       });
     }
     if (window.document.body.scrollTop > 1600) {
       this.setState({
         button: {
-          opacity: 1
+          opacity: 1,
+          transition: 'all ease 1.3s'
         }
       });
     }
@@ -59,7 +64,7 @@ export default class Card extends Component {
     const stickyStyle = {
       position: 'fixed',
       top: 30,
-      right: 177
+      left: 918
     };
     return (
       <Sticky topOffset={-30} stickyStyle={stickyStyle}>
