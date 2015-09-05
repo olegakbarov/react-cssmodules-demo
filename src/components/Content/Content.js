@@ -13,7 +13,10 @@ export default class Content extends Component {
               <h3>
 In this example we explore CSS Modules and build a component using Webpack,
  React and Stylus. This is not a tutorial, more like a walkthrough and requires
- some experience with this technologies and desire to dig into source code.
+ some experience with this technologies and desire to dig into&nbsp;
+             <a href="https://github.com/olegakbarov/react-cssmodules-demo">
+               source code
+             </a>.
               </h3>
               <h3>
 Notice: if you look right — you'll probably find a usercard. The look of it
@@ -72,8 +75,12 @@ your modular CSS within React almost as if you'd write your regular CSS.
             </pre>
             <h1>That's it</h1>
             <p>
-Now when you have the idea of how CSS Modules work, go try it by yourself!
+Now when you have the idea of how CSS Modules work, go try it by yourself or
+fork me on the GitHubs!
             </p>
+            <a href="https://github.com/olegakbarov/react-cssmodules-demo">
+              <div styleName="octocat"></div>
+            </a>
         </div>
     );
   }

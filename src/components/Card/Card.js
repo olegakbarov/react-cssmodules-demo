@@ -27,7 +27,7 @@ export default class Card extends Component {
         }
       });
     }
-    if (window.document.body.scrollTop > 800) {
+    if (window.document.body.scrollTop > 900) {
       this.setState({
         userpick: {
           opacity: 1,
@@ -35,7 +35,7 @@ export default class Card extends Component {
         }
       });
     }
-    if (window.document.body.scrollTop > 1100) {
+    if (window.document.body.scrollTop > 1500) {
       this.setState({
         username: {
           opacity: 1,
@@ -43,7 +43,7 @@ export default class Card extends Component {
         }
       });
     }
-    if (window.document.body.scrollTop > 1400) {
+    if (window.document.body.scrollTop > 1700) {
       this.setState({
         about: {
           opacity: 1,
@@ -51,7 +51,7 @@ export default class Card extends Component {
         }
       });
     }
-    if (window.document.body.scrollTop > 1600) {
+    if (window.document.body.scrollTop > 1900) {
       this.setState({
         button: {
           opacity: 1,
@@ -64,11 +64,14 @@ export default class Card extends Component {
     const stickyStyle = {
       position: 'fixed',
       top: 30,
-      left: 918
+      transform: 'translateX(0%)'
     };
     return (
       <Sticky topOffset={-30} stickyStyle={stickyStyle}>
-        <div style={this.state.card} styleName="card">
+        <div
+          style={this.state.card}
+          styleName="card"
+          >
           <Userpick userpickStyle={this.state.userpick} />
           <div style={this.state.username} styleName="username">
             Taylor Swift
