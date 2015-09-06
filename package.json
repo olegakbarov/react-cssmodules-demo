@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "Make your CSS namespaced and build *real* components.",
   "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:olegakbarov/react-cssmodules-demo.git"
+  },
   "scripts": {
     "build": "webpack -p",
     "start": "babel-node ./server.js",

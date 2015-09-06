@@ -19,7 +19,7 @@ In this example we explore CSS Modules and build a component using Webpack,
              </a>.
               </h3>
               <h3>
-Notice: if you look right — you'll probably find a usercard. The look of it
+Notice: if you look right — you&#39;ll probably find a usercard. The look of it
 more or less corresponds with the code provided below. Also it should
 entertain you.
               </h3>
@@ -67,13 +67,13 @@ called <code styleName="code-inline">react-css-modules</code> which
  takes care about it all. Just install it and wrap your component in decorator
  (which adds <code styleName="code-inline">styleName</code> keyword
 to <code styleName="code-inline">render()</code> method) and write
-your modular CSS within React almost as if you'd write your regular CSS.
+your modular CSS within React almost as if you&#39;d write your regular CSS.
               </p>
             </div>
             <pre styleName="code">
               {samples.four}
             </pre>
-            <h1>That's it</h1>
+            <h1>That&#39;s it</h1>
             <p>
 Now when you have the idea of how CSS Modules work, go try it by yourself or
 fork me on the GitHubs!
