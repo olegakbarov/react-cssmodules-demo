@@ -17,7 +17,7 @@ const cfg = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: '/build/'
+    publicPath: './build'
   },
 
   plugins: [
@@ -64,7 +64,7 @@ if (env !== 'production') {
   cfg.debug = true;
   cfg.devtool = '#eval-source-map';
 
-  cfg.entry.unshift(
+  cfg.entry.push(
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client'
   );
