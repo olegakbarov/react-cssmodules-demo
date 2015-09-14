@@ -4,13 +4,15 @@ import webpack from 'webpack';
 import NyanProgressPlugin from 'nyan-progress-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
-import csswring from 'csswring';
+import cssnano from 'cssnano';
 
-module.exports = {
+const env = process.env.NODE_ENV === 'production' ? 'production' : 'dev';
+
+console.log(env);
+
+const cfg = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
     './src/index'
   ],
 
@@ -21,41 +23,64 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new NyanProgressPlugin(),
     new ExtractTextPlugin('style.css', { allChunks: true })
   ],
 
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['react-hot-loader', 'babel'],
-      include: path.join(__dirname, 'src')
-    },
-    {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
-    },
-    {
-      test: /\.styl$/,
-      loader: ExtractTextPlugin.extract('style-loader',
-      'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader!stylus-loader') //eslint-disable-line
-    },
-    {
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      loaders: [
-        'file?hash=sha512&digest=hex&name=[hash].[ext]',
-        'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-      ]
-    },
-    {
-      test: /\.md$/,
-      loader: 'html!markdown'
-    }
-  ]
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.styl$/,
+        loader: ExtractTextPlugin.extract('style-loader',
+        'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader!stylus-loader') //eslint-disable-line
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          // 'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          "file-loader?name=name-[hash:6].[ext]",
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+      },
+      {
+        test: /\.md$/,
+        loader: 'html!markdown'
+      }
+    ]
   },
 
   postcss: () => {
-    return [autoprefixer, csswring];
+    return [autoprefixer, cssnano];
   }
 };
+
+const jsLoader = {
+  test: /\.js$/,
+  loaders: ['babel'],
+  include: path.join(__dirname, 'src')
+};
+
+if (env !== 'production') {
+  cfg.debug = true;
+  cfg.devtool = '#eval-source-map';
+
+  cfg.entry.unshift(
+    'webpack/hot/dev-server',
+    'webpack-hot-middleware/client'
+  );
+
+  cfg.plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+  );
+
+  jsLoader.loaders.unshift('react-hot');
+}
+
+cfg.module.loaders.push(jsLoader);
+
+module.exports = cfg;
