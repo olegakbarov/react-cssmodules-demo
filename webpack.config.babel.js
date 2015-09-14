@@ -39,7 +39,7 @@ const cfg = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file-loader?name=name-[hash:6].[ext]'
+          'file-loader?./blob/gh-pages/name=name-[hash:6].[ext]'
         ]
       },
       {
