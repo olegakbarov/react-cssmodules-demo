@@ -17,7 +17,7 @@ const cfg = {
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: './build'
+    publicPath: './'
   },
 
   plugins: [
@@ -35,12 +35,6 @@ const cfg = {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract('style-loader',
         'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader!stylus-loader') //eslint-disable-line
-      },
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file-loader?./blob/gh-pages/name=name-[hash:6].[ext]'
-        ]
       },
       {
         test: /\.md$/,
