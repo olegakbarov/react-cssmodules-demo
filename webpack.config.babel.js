@@ -8,8 +8,6 @@ import cssnano from 'cssnano';
 
 const env = process.env.NODE_ENV === 'production' ? 'production' : 'dev';
 
-console.log(env);
-
 const cfg = {
   devtool: 'eval',
   entry: [
@@ -41,7 +39,6 @@ const cfg = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          // 'file?hash=sha512&digest=hex&name=[hash].[ext]',
           "file-loader?name=name-[hash:6].[ext]",
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
