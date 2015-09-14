@@ -15,7 +15,7 @@ const cfg = {
   ],
 
   output: {
-    path: path.join(__dirname, './build/'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
     publicPath: '/build/'
   },
@@ -39,8 +39,7 @@ const cfg = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          'file-loader?name=name-[hash:6].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+          'file-loader?name=name-[hash:6].[ext]'
         ]
       },
       {
