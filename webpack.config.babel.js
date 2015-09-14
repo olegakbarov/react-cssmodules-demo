@@ -39,7 +39,7 @@ const cfg = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
-          "file-loader?name=name-[hash:6].[ext]",
+          'file-loader?name=name-[hash:6].[ext]',
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       },
