@@ -9,7 +9,10 @@ export default class Userpick extends Component {
   }
   render() {
     return (
-      <div style={this.props.userpickStyle} styleName="userpick">
+      <div 
+      	style={this.props.userpickStyle} 
+      	styleName="userpick"
+      	>
       </div>
     );
   }
