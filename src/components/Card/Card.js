@@ -9,14 +9,14 @@ import CSSModules from 'react-css-modules';
 
 @CSSModules(styles)
 export default class Card extends Component {
+  state = {
+    userpick: {}
+  }
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-  }
-  state = {
-    userpick: {}
   }
   handleScroll = () => {
     if (window.document.body.scrollTop > 500) {
