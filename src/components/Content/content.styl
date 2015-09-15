@@ -1,0 +1,36 @@
+.content
+  display block
+  float left
+  width 66.666667%
+  margin-bottom 60px
+  padding 40px;
+  border 1px solid #ccc
+  border-radius 4px
+  background-color rgb(255, 255, 255)
+  @media screen and (max-width: 768px)
+    width 100%
+    display block
+  @media (max-width: 1200px)
+    padding 1em
+    max-width 100%
+    font-size .9em
+
+p
+  line-height 1.7em
+
+code
+  @media screen and (max-width: 768px)
+    font-size .8em
+
+.octocat
+  background-image url('file!./octo.svg')
+  display block
+  margin 20px auto 0
+  width 33px
+  height 32px
+  &:hover
+    cursor pointer
+    opacity .7
+    transition all ease .4
+  &:active
+    transform scale(.9)

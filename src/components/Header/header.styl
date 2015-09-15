@@ -1,0 +1,44 @@
+.header
+  width 100%
+  background: linear-gradient(90deg, #83a4d4 10%, #b6fbff 90%)
+
+.wrapper
+  margin 0 auto
+  padding 0 40px 2em
+  max-width 1100px
+  position relative
+
+.title
+  display block
+  text-align center
+  color rgb(251, 251, 251)
+  font-weight 800
+  padding-top 1em
+  font-size 8vw
+  line-height 1em
+
+.container
+  border 3px solid rgb(255, 255, 255)
+  position relative
+  margin 80px auto
+  width 200px
+  height 200px
+
+block()
+  background-color rgba(255, 255, 255, 0.97)
+  opacity .6
+  width 100px
+  height 100px
+  display block
+  margin 0 auto
+
+.block
+  block()
+  &-text
+    position absolute
+    bottom 0px
+    left 5px
+    text-transform uppercase
+    color rgba(255, 255, 255, 0.97)
+    font-size 3.10em
+    line-height .95em
